@@ -67,6 +67,32 @@ PDF reports support additional scientific analysis sections, including ORF ident
 - Preferred export format.
 - Persistent application settings.
 
+## Application Screenshots
+
+### 1. Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### 2. DNA Sequence Analysis
+![DNA Analysis](screenshots/dna-analysis.png)
+
+### 3. Six-Frame Translation
+![Six-Frame Translation](screenshots/six-frame-translation.png)
+
+### 4. ORF Analysis
+![ORF Analysis](screenshots/orf-analysis.png)
+
+### 5. Codon Analysis
+![Codon Analysis](screenshots/codon-analysis.png)
+
+### 6. Charts and Visualisations
+![Charts](screenshots/charts.png)
+
+### 7. History and Saved Sequences
+![History and Saved Sequences](screenshots/history-and-saved.png)
+
+### 8. PDF Report
+![PDF Report](screenshots/pdf-report.png)
+
 ---
 
 ## Technology Stack
