@@ -1,8 +1,16 @@
 # DNA Sequence Analysis Tool
 
-A Python-based bioinformatics application for analysing DNA sequences through nucleotide composition, GC content, codon usage, open reading frame identification, translation and interactive visualisations.
+An interactive bioinformatics application for DNA sequence analysis, genetic code interpretation and genomic data visualisation.
 
-Built with Python and Streamlit, this project aims to make fundamental DNA sequence analysis accessible through an interactive web interface.
+Built using Python and Streamlit, this project provides an accessible environment for performing fundamental and advanced DNA sequence analyses through an intuitive web interface.
+
+---
+
+## Overview
+
+The DNA Sequence Analysis Tool is designed to simplify common bioinformatics workflows by combining sequence processing, biological analysis, interactive visualisation and report generation in one application.
+
+Users can analyse DNA sequences manually or upload FASTA files, explore different reading frames, identify open reading frames, investigate codon frequencies and examine GC-content distribution.
 
 ## Features
 
@@ -12,11 +20,11 @@ Built with Python and Streamlit, this project aims to make fundamental DNA seque
 - Nucleotide composition analysis.
 - GC and AT content calculation.
 - Ambiguous nucleotide identification.
-- DNA reverse complement generation.
+- Reverse complement generation.
 - DNA-to-RNA transcription.
 - Protein translation.
 
-### 2. Advanced Bioinformatics Analysis
+### 2. Advanced Bioinformatics
 - Six-frame translation.
 - Open Reading Frame (ORF) identification.
 - Start and stop codon detection.
@@ -26,30 +34,32 @@ Built with Python and Streamlit, this project aims to make fundamental DNA seque
 
 ### 3. Interactive Visualisation
 - Nucleotide composition charts.
-- Codon frequency charts.
-- GC content distribution across sequence windows.
+- Codon frequency distribution.
+- GC-content distribution across sequence windows.
 - ORF visualisation.
 
-### 4. FASTA Support
-- Upload FASTA files.
-- Parse multiple FASTA records.
-- Select individual sequences for analysis.
-- Validate uploaded sequences.
+### 4. FASTA File Support
+- FASTA file uploading and parsing.
+- Multiple FASTA record support.
+- Individual sequence selection.
+- Sequence validation.
 
 ### 5. Sequence Management
 - Analysis history.
-- Save frequently used DNA sequences.
+- Save frequently used sequences.
 - Reanalyse saved sequences.
 - Delete individual records.
-- Clear history and saved sequences.
+- Clear analysis history.
 
-### 6. Reports and Export
-Export analysis results in:
+### 6. Report Generation
+
+Export analysis results in three formats:
+
 - PDF
 - TXT
 - CSV
 
-PDF reports can include additional scientific analysis sections, including ORFs, codon statistics, six-frame translations and sliding-window GC analysis.
+PDF reports support additional scientific analysis sections, including ORF identification, codon statistics, six-frame translation and sliding-window GC analysis.
 
 ### 7. Application Settings
 - Light and Dark themes.
@@ -57,17 +67,21 @@ PDF reports can include additional scientific analysis sections, including ORFs,
 - Preferred export format.
 - Persistent application settings.
 
+---
+
 ## Technology Stack
 
-| Technology | Purpose |
+| Technology | Application |
 |---|---|
 | Python | Core programming language |
 | Streamlit | Interactive web application |
-| Biopython | Bioinformatics library |
-| Pandas | Data processing and CSV export |
-| Plotly | Interactive data visualisation |
+| Biopython | Bioinformatics toolkit |
+| Pandas | Data processing and CSV generation |
+| Plotly | Interactive visualisation |
 | ReportLab | PDF report generation |
 | Pytest | Automated testing |
+
+---
 
 ## Project Structure
 
@@ -96,138 +110,164 @@ dna-sequence-analysis-tool/
 │   ├── test_sequence_io.py
 │   ├── test_orf_analysis.py
 │   ├── test_codon_analysis.py
-│   ├── test_gc_analysis.py
+│   └── test_gc_analysis.py
 │
 └── data/
-    ├── sample_sequences.fasta
-    ├── analysis_history.json
-    ├── saved_sequences.json
-    └── settings.json
+    └── sample_sequences.fasta
 ```
+
+---
 
 ## Installation and Setup
 
 ### Prerequisites
 
 - Python 3.10 or later.
-- pip.
-- Git (optional).
+- pip package manager.
+- Git.
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/dna-sequence-analysis-tool.git
+git clone https://github.com/AnshitSingh16/dna-sequence-analysis-tool.git
 ```
 
-Navigate into the project directory:
+### 2. Navigate to the project directory
 
 ```bash
 cd dna-sequence-analysis-tool
 ```
 
-### 2. Create a virtual environment
+### 3. Create a virtual environment
 
 ```bash
 python -m venv .venv
 ```
 
-### 3. Activate the environment
+### 4. Activate the virtual environment
 
-Windows PowerShell:
+**Windows PowerShell**
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-Windows Command Prompt:
+**Windows Command Prompt**
 
 ```cmd
 .venv\Scripts\activate.bat
 ```
 
-Linux/macOS:
+**Linux/macOS**
 
 ```bash
 source .venv/bin/activate
 ```
 
-### 4. Install dependencies
+### 5. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Run the application
+### 6. Launch the application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will open in your default browser.
+The application will open in your default web browser.
+
+---
 
 ## Example DNA Sequence
 
-You can test the application using:
+Use the following sequence to explore the application:
 
 ```text
 ATGAAATTTGGGCCCTAA
 ```
 
-This sequence contains:
+Expected basic analysis:
 
-- 18 nucleotides.
-- 38.89% GC content.
-- 61.11% AT content.
-- An ATG start codon.
-- A TAA stop codon.
-- A six-codon-length reading frame, including the terminal stop codon.
+| Parameter | Result |
+|---|---|
+| Sequence Length | 18 bp |
+| GC Content | 38.89% |
+| AT Content | 61.11% |
+| RNA Sequence | AUGAAAUUUGGGCCCUAA |
+| Protein Translation | MKFGP* |
+| Start Codon | ATG |
+| Stop Codon | TAA |
+
+---
 
 ## Running Tests
 
 The project uses Pytest for automated testing.
 
-Run the complete test suite:
+Run all tests:
 
 ```bash
 pytest
 ```
 
-To display detailed test results:
+For detailed test output:
 
 ```bash
 pytest -v
 ```
 
-## Scientific Considerations
+---
 
-- DNA sequences are validated using standard IUPAC nucleotide symbols.
-- Ambiguous nucleotides are excluded from canonical GC and AT content calculations.
-- Translation is performed using the standard genetic code.
+## Scientific Methodology
+
+The application follows several basic biological and computational principles:
+
+- DNA sequence validation supports standard IUPAC nucleotide symbols.
+- Ambiguous nucleotides are excluded from canonical GC and AT calculations.
+- Protein translation uses the standard genetic code.
 - Incomplete trailing codons are excluded from translation.
-- ORF identification considers forward and reverse strands.
-- Codon frequency calculations exclude ambiguous codons.
-- Sliding-window GC analysis uses configurable window and step sizes.
+- Six-frame translation examines three reading frames on each strand.
+- ORF identification examines start-to-stop codon regions on forward and reverse strands.
+- Codon frequency analysis excludes ambiguous codons.
+- Sliding-window GC analysis evaluates nucleotide composition across configurable sequence windows.
 
-Results should be interpreted in the context of the biological sequence and the assumptions of each analysis method.
+Results should be interpreted according to the biological context and assumptions of each analytical method.
+
+---
 
 ## Future Development
 
-Potential improvements include:
+Potential directions for expanding the project include:
 
 - DNA sequence alignment.
 - BLAST integration.
 - Genome annotation.
 - Sequence similarity analysis.
 - Mutation and variant analysis.
-- Additional biological visualisations.
-- Expanded testing with real genomic datasets.
+- Additional genomic visualisations.
+- Analysis of larger genomic datasets.
+- Expanded biological datasets and testing.
+
+---
 
 ## Disclaimer
 
-This application is an educational and research-oriented bioinformatics project. Its outputs should not be treated as clinical, diagnostic or medical advice.
+This project is intended for educational, computational biology and research purposes.
+
+It is not designed or validated for clinical diagnosis or medical decision-making.
+
+---
 
 ## Author
 
-Developed as an independent bioinformatics and computational biology project.
+**Anshit Singh**
 
-**Domain:** Bioinformatics | Computational Biology | DNA Sequence Analysis
+Independent Bioinformatics & Computational Biology Project.
+
+**Areas:** Bioinformatics | Computational Biology | Genomics | Python | Data Visualisation
+
+---
+
+**Repository:** https://github.com/AnshitSingh16/dna-sequence-analysis-tool
