@@ -3,6 +3,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from copy import deepcopy
 from uuid import uuid4
+import tempfile
 
 from modules.sequence_io import validate_dna_sequence
 
@@ -16,7 +17,16 @@ from modules.analysis import (
 
 # Project directories
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIRECTORY = PROJECT_ROOT / "data"
+
+# Use temporary writable storage on Streamlit Cloud.
+# Use the project's data directory during local development.
+if Path("/mount/src").exists():
+    DATA_DIRECTORY = (
+        Path(tempfile.gettempdir())
+        / "dna-sequence-analysis-tool"
+    )
+else:
+    DATA_DIRECTORY = PROJECT_ROOT / "data"
 
 HISTORY_FILE = DATA_DIRECTORY / "analysis_history.json"
 SAVED_FILE = DATA_DIRECTORY / "saved_sequences.json"
